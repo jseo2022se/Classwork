@@ -140,7 +140,14 @@
 // let i = 1;
 
 // while (i < 20) {
-//     if (i % 2 != 0 && i % 3 != 0) {
+//     if (i == 1) {
+//         i++;
+//         continue;
+//     }
+//     else if (i == 2 || i == 3) {
+//         console.log(i);
+//     }
+//     else if (i % 2 != 0 && i % 3 != 0) {
 //         console.log(i);
 //     }
 //     i++;
@@ -156,3 +163,55 @@
 // }
 // console.log(quarters + ' quarters');
 
+// // EXERCISE 6
+
+// let i = 1;
+// while (i <= 20) {
+//     if (i < 10 && i % 2 != 0) {
+//         console.log(i*10);
+//     }
+//     if (i > 10 && i % 2 == 0) {
+//         console.log((i-10)*10);
+//     }
+//     i++;
+// }
+
+// // EXERCISE 7 
+
+// let i = 500;
+// while (i <= 800) {
+//     if (i % 4 == 0) {
+//         console.log(i);
+//     }
+//     i++;
+// }
+
+// // EXERCISE 8
+
+// let i = 100 - 27.83;
+// let bill = 0;
+// while (i > 0) {
+//     i -= 1;
+//     bill++;
+// }
+// console.log(bill-1);
+
+// // OUTPUT 1 AS A FOR LOOP
+
+// for (let i = 1; i <= 5; i++) {
+//     let output1 = '';
+//     for (let j = 1; j <= i; j++) {
+//         output1 += j;
+//     }
+//     console.log(output1);
+// }
+
+// // OUTPUT 2 AS A FOR LOOP
+// for (let i = 5; i > 0; i--) {
+//     let count = i;
+//     let output2 = '';
+//     for (let j = i; count > 0; count--) {
+//         output2 += j;
+//     }
+//     console.log(output2);
+// }
