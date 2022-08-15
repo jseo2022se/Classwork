@@ -109,7 +109,7 @@
 // function numArgs(...numArray) {
 //     return numArray.length;
 // }
-// console.log(1,2,3,4,5,20);
+// console.log(numArgs(1,2,3,4,5,20));
 
 // EXERCISE 7
 
@@ -146,7 +146,7 @@
 // CHALLENGE
 // function addList(...listNumbers) {
 //     let sum = 0;
-//     if (!args) {
+//     if (!listNumbers) {
 //         return 0;
 //     }
 //     for (let i = 0; i < listNumbers.length; i++) {
@@ -155,4 +155,4 @@
 //     return sum;
 // }
 
-// console.log(addList (1,50,1.23));
+// console.log(addList ());
