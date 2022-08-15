@@ -82,6 +82,7 @@
 //     }
 // }
 
+
 // EXERCISE 4
 
 // function sumArray(arrayNum) {
@@ -91,6 +92,7 @@
 //     }
 //     return sum;
 // }
+
 
 // EXERCISE 5
 
@@ -107,6 +109,7 @@
 // function numArgs(...numArray) {
 //     return numArray.length;
 // }
+// console.log(1,2,3,4,5,20);
 
 // EXERCISE 7
 
