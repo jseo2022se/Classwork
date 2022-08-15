@@ -36,7 +36,9 @@
 // add(4, 5, 6, 10, 100, 50);
 
 
+
 // FUNCTIONS AND ARRAYS LAB EXERCISES
+
 
 // EXERCISE 1
 
@@ -47,6 +49,7 @@
 //         return number1;
 //     }
 // }
+
 
 // EXERCISE 2
 
@@ -73,13 +76,12 @@
 // function isCharAVowel(letter) {
 //     letLower = letter.toLowerCase();
 //     vowels = ['a','e','i','o','u'];
-//     for(let i = 0; i < letter.length; i++) {
+//     for(let i = 0; i < vowels.length; i++) {
 //         if(vowels[i] == letLower) {
 //             return true;
-//         } else {
-//             return false;
 //         }
 //     }
+//     return false;
 // }
 
 
@@ -104,6 +106,7 @@
 //     return prod;
 // }
 
+
 // EXERCISE 6
 
 // function numArgs(...numArray) {
@@ -111,26 +114,30 @@
 // }
 // console.log(numArgs(1,2,3,4,5,20));
 
+
 // EXERCISE 7
 
 // function reverseString(sentence) {
 //     let reverse = '';
-//     for(let i = sentence.length - 1; i > 0; i--) {
+//     for(let i = sentence.length - 1; i >= 0; i--) {
 //         reverse += sentence[i];
 //     }
 //     return reverse;
 // }
 
+
 // EXERCISE 8
 
-// function longestStringInArray(...stringArray) {
+// function longestStringInArray(stringArray) {
 //     let output = 0;
 //     for (let i = 0; i < stringArray.length; i++) {
 //         if (stringArray[i].length > output) {
-//             return output;
-//         }
+//             output = stringArray[i].length;
+//         } 
 //     }
+//     return output
 // }
+
 
 // EXERCISE 9
 
@@ -141,7 +148,9 @@
 //             output.push(arrayOfStrings[i]);
 //         }
 //     }
+//     return output;
 // }
+
 
 // CHALLENGE
 // function addList(...listNumbers) {
@@ -155,4 +164,4 @@
 //     return sum;
 // }
 
-// console.log(addList ());
+// console.log(addList (7,-12));
