@@ -308,11 +308,12 @@ const radio = {
         }
     ],
     stationSong: (number1, number2) => {
-        stationNumber = Math.floor(Math.random() * number1);
-        songRandom = Math.floor(Math.random() * number2);
+        let stationNumber = Math.floor(Math.random() * number1);
+        let songRandom = Math.floor(Math.random() * number2);
         return "Now playing: " + radio.stations[stationNumber].songs[songRandom].title +
         " by " + radio.stations[stationNumber].songs[songRandom].artist;
     }
 }
 // console.log(radio)
+// console.log(radio.stations[0].name)
 console.log(radio.stationSong(3,4))
