@@ -28,7 +28,9 @@ let firstVariable = 'Hello World';
 firstVariable = 1;
 let secondVariable = firstVariable;
 secondVariable = 'Codex Astartes';
+console.log(firstVariable); // 6. the value of the firstVariable is 1
+let yourName = 'Jeonghyun Seo';
+console.log('Hello my name is ' + yourName);
 
-// 6. the value of the firstVariable is 1
+// C. Booleans
 
-let yourName
