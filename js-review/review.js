@@ -65,9 +65,29 @@ A. Q+A
 
 // E. Driver's Ed
 
-let personAge = 15; 
-if (personAge >= 16) {
-    console.log("Here are the keys!");
-} else {
-    console.log("Sorry, you're too young.");
-}
+// let personAge = 15; 
+// if (personAge >= 16) {
+//     console.log("Here are the keys!");
+// } else {
+//     console.log("Sorry, you're too young.");
+// }
+
+
+// II. LOOPS
+
+// A. The Basics
+
+//1.
+// for (let i = 0; i < 11; i++) {
+//     console.log(i);
+// }
+
+//2. 
+// for (let i = 10; i < 401; i++) {
+//     console.log(i);
+// }
+
+//3. 
+// for (let i = 12; i < 4001; i+=3) {
+//     console.log(i);
+// }
