@@ -55,9 +55,19 @@ A. Q+A
 
 // D. The Farm
 
-const animal = 'pig';
-if (animal === 'cow') {
-    console.log('mooooo');
+// const animal = 'pig';
+// if (animal === 'cow') {
+//     console.log('mooooo');
+// } else {
+//     console.log("Hey! You're not a cow.");
+// }
+
+
+// E. Driver's Ed
+
+let personAge = 15; 
+if (personAge >= 16) {
+    console.log("Here are the keys!");
 } else {
-    console.log("Hey! You're not a cow.");
+    console.log("Sorry, you're too young.");
 }
