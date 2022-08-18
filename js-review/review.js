@@ -95,7 +95,7 @@ A. Q+A
 
 // B. GET EVEN
 
-// for (let i = 1; i < 100; i++) {
+// for (let i = 1; i <= 100; i++) {
 //     if (i % 2 === 0) {
 //         console.log(i +"<-- is an even number");
 //     } else {
@@ -103,3 +103,28 @@ A. Q+A
 //     }
 // }
 
+
+// C. GIVE ME FIVE
+
+for (let i = 0; i <= 100; i++) {
+    if (i === 0) {
+        continue;
+    }
+    if (i % 3 === 0) {
+        if (i % 5 === 0 ) {
+            console.log('I found a ' + i + '. Three is a crowd');
+            console.log('I found a ' + i + '. High five!');
+        }
+        else {
+            console.log('I found a ' + i + '. Three is a crowd');
+        }
+    } 
+    else if (i % 5 === 0) {
+        if (i % 3 === 0) {
+            console.log('I found a ' + i + '. Three is a crowd');
+            console.log('I found a ' + i + '. High five!');
+        } else {
+            console.log('I found a ' + i + '. High five!');           
+        }
+    }
+}
