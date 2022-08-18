@@ -91,3 +91,15 @@ A. Q+A
 // for (let i = 12; i < 4001; i+=3) {
 //     console.log(i);
 // }
+
+
+// B. GET EVEN
+
+// for (let i = 1; i < 100; i++) {
+//     if (i % 2 === 0) {
+//         console.log(i +"<-- is an even number");
+//     } else {
+//         console.log(i);
+//     }
+// }
+
