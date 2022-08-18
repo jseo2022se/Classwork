@@ -24,13 +24,31 @@ A. Q+A
 
 // B. Strings
 
-let firstVariable = 'Hello World';
-firstVariable = 1;
-let secondVariable = firstVariable;
-secondVariable = 'Codex Astartes';
-console.log(firstVariable); // 6. the value of the firstVariable is 1
-let yourName = 'Jeonghyun Seo';
-console.log('Hello my name is ' + yourName);
+// let firstVariable = 'Hello World';
+// firstVariable = 1;
+// let secondVariable = firstVariable;
+// secondVariable = 'Codex Astartes';
+// console.log(firstVariable); // 6. the value of the firstVariable is 1
+// let yourName = 'Jeonghyun Seo';
+// console.log('Hello my name is ' + yourName);
+
 
 // C. Booleans
+
+const a = 4;
+const b = 53;
+const c = 57;
+const d = 16;
+const e = 'Kevin';
+
+console.log(a < b);
+console.log(c > d);
+console.log('Name' === 'Name'); // or ==
+console.log(true || false);
+console.log(false || false || false || false || false || true);
+console.log(false === false);
+console.log(e === 'Kevin');
+console.log(a + b === c);
+console.log(a * a === d);
+console.log(48 == '48');
 
