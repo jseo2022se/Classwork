@@ -198,59 +198,119 @@ const chefDaniels = new Chef('Daniels', 27, 'chef');
 const mailPersonA = new PostalWorker('Dave', 21, 'postal worker');
 const mailPersonB = new PostalWorker('Sam', 25, 'postal worker');
 
-console.log(chefRamsay.toString()); // parent class method
-chefRamsay.cooking(); // chef class method
-chefRamsay.goBathroom(); // parent class method
+// console.log(chefRamsay.toString()); // parent class method
+// chefRamsay.cooking(); // chef class method
+// chefRamsay.goBathroom(); // parent class method
 
-console.log();
-console.log(chefDaniels.toString()); // parent class method
-chefDaniels.ratingFood(); // chef class method
-chefDaniels.eat(); // parent class method
+// console.log();
+// console.log(chefDaniels.toString()); // parent class method
+// chefDaniels.ratingFood(); // chef class method
+// chefDaniels.eat(); // parent class method
 
-console.log();
-console.log(mailPersonA.toString()); // parent class method
-mailPersonA.deliverMail(); // postal worker class method 
-mailPersonA.run(); // parent class method
+// console.log();
+// console.log(mailPersonA.toString()); // parent class method
+// mailPersonA.deliverMail(); // postal worker class method 
+// mailPersonA.run(); // parent class method
 
-console.log();
-console.log(mailPersonB.toString()); // parent class method
-mailPersonB.organizingMail(); // postal worker class method 
+// console.log();
+// console.log(mailPersonB.toString()); // parent class method
+// mailPersonB.organizingMail(); // postal worker class method 
 
 // BONUS EXERCISE
-class BankAccount {
+// class BankAccount {
+//     // ownerName: 'Usman',
+//     // balance: 1000000,
+//     // acctNum: 485687932
+//     constructor(accName, balance) {
+//       this.accName = accName;
+//       this.balance = balance;
+//       this.acctNum = Math.floor(Math.random() * 1000)
+//     } 
 
-    constructor(ownerName, balance, acctNum) {
-        this.ownerName = ownerName;
-        this.balance = balance;
-        this.acctNum = acctNum;
-    }
+//     deposit(depositedAmount) {
+//       this.balance += depositedAmount
+//       console.log('current balance after depositing ' + depositedAmount + " is: " + this.balance)
+//     }
 
-    deposit() {
-        console.log('Depositing money...');
-    }
-    withdraw() {
-        console.log('Withdrawing money...');
-    }
-}
+//     withdraw(withdrawnAmount) {
+//       this.balance -= withdrawnAmount
+//       console.log('current balance after withdrawing ' + withdrawnAmount + " is: " + this.balance)
+//     }
 
-class CheckingAccount extends BankAccount {
-    constructor(ownerName, balance, acctNum, overdraftEnabled) {
-        this.ownerName = ownerName;
-        this.balance = balance;
-        this.acctNum = acctNum;
-        this.overdraftEnabled = overdraftEnabled;
-    }
-    withdraw(overdraftEnabled) {
-        if(overdraftEnabled) {
-            console.log('Overdraft enabled and withdrawing money');
-        } else {
-            console.log('Cannot withdraw! Balance too low for request!');
-        }
-    }
-}
+//   }
 
-class SavingsAccount extends BankAccount {
-    withdraw() {
-        console.log('Cannot withdraw from Savings Account!');
-    }
-}
+//   class CheckingAccount extends BankAccount {
+//     constructor(accName, balance, overdraftEnabled = true) {
+//       super(accName, balance) // calls the constructor from parent class (Bank Account)
+//       this.overdraftEnabled = overdraftEnabled;
+//     }
+
+//     withdraw(amount) { 
+//       if (amount > this.balance) {
+
+//         if (this.overdraftEnabled) {
+
+//           let overdraftFee = 20
+//           this.balance -= (amount + overdraftFee)
+//           console.log('this transaction overdrafts your balance :(')
+
+//         } else {
+//           console.log('you cannot withdraw more than you have')
+//         }
+
+//       } else {
+//         this.balance -= amount
+//         console.log('current balance after withdrawing ' + amount + " is: " + this.balance)
+//       }
+//     }
+//   }
+
+//   class SavingsAccount extends BankAccount {
+//     withdraw() {
+//       console.log('you cannot withdraw from this savings account :(')
+//     }
+//   }
+
+//   const lucas = new BankAccount('Lucas', 1000000)
+//   const usman = new CheckingAccount('Usman', 1000000)
+//   const stephin = new SavingsAccount('Stephin', 5)
+
+//   // console.log(lucas)
+//   // console.log(usman)
+//   // console.log(stephin)
+
+//   lucas.withdraw(1000)
+//   usman.withdraw(2000000)
+//   stephin.withdraw(4) 
+
+
+// Singleton (do some research on this)
+// method chaining (do some research)
+
+// Singleton (do some research on this)
+// class Car {
+//     constructor (maker, serialNumber) {
+//       this.serialNumber = serialNumber;
+//       this.maker = maker
+//     }
+//     drive () {
+//       console.log('Vroom Vroom');
+//     }
+//   }
+//   class Factory {
+//     constructor(company) {
+//       this.company = company;
+//       this.cars = [];
+//     }
+//     generateCar () {
+//       const newCar = new Car(this.company, this.cars.length);
+//       this.cars.push(newCar);
+//       return this
+//     }
+//     findCar(index) {
+//       return this.cars[index];
+//     }
+//   }
+//   // only need one instance (Singleton)
+//   const tesla = new Factory('Tesla')
+  
