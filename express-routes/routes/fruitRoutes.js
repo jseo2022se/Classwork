@@ -5,7 +5,10 @@ const express = require('express')
 // Index, New, Delete, Update, Create, Edit, Show
 
 // Load our fruits data
-const fruits = require('../models/fruits')
+// const fruits = require('../models/fruits')
+
+// Loading our Model of fruit
+const Fruit = require('../models/fruit')
 
 // Create a special router object for our routes
 const router = express.Router()
@@ -18,7 +21,18 @@ const router = express.Router()
 // example of index action
 router.get('/', (req, res) => {
     // res.send(fruits);
-    res.render('fruits/Index', {fruits: fruits})
+    // res.render('fruits/Index', {fruits: fruits})
+
+    // Find takes two arguments:
+    //  1st: an object with our query (to filter our data and find exactly what we need)
+    //  2nd: callback (with an error object and the found data)
+    Fruit.find({}, (err, foundFruit) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render('fruits/Index', {fruits: foundFruit})
+        }
+    })
 });
 
 // example of new action
@@ -45,9 +59,21 @@ router.post('/', (req, res) => {
     } else {
         req.body.readyToEat = false
     }
-    fruits.push(req.body)
-    console.log(fruits)
-    res.redirect('/fruits')
+
+    // Create has two arguments:
+    //  1st: the data we want to send
+    //  2nd: callback function 
+    Fruit.create(req.body, (err, createdFruit) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect('/fruits')
+        }
+    })
+
+    // fruits.push(req.body)
+    // console.log(fruits)
+    // res.redirect('/fruits')
 })
 
 
@@ -57,12 +83,24 @@ router.get('/:index/edit', (req, res) => {
 })
 
 // example of show action
-router.get('/:index', (req, res) => {
+router.get('/:id', (req, res) => {
     // res.send(fruits[req.params.index]);
-    res.render('fruits/Show', {
-        fruit: fruits[req.params.index]
+    // res.render('fruits/Show', {
+    //     fruit: fruits[req.params.index]
+    // })
+
+    // findById accepts two arguments:
+    //  1st: the id of the document in our database
+    //  2nd: callback (with error object and found documents)
+    Fruit.findById(req.params.id, (err, foundFruit) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render('fruits/Show', { fruit: foundFruit })
+        }
     })
-});
+    
+})
 
 
 
