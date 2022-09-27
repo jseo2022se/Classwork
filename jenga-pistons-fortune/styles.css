@@ -1,0 +1,32 @@
+div {
+    margin: 5px;
+}
+
+#container > .item1, #container >.item2 {
+    transition: width 1s ease-in 500ms;
+}
+
+/* #container:hover {
+    width: 200px;
+} */
+
+.item1 {
+    background-color: red;
+    height: 50px;
+    width: 50px;
+}
+
+.item1:hover {
+    width: 200px;
+}
+
+.item2 {
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    transition-delay: 500ms;
+}
+
+.item2:hover  {
+    width: 200px;
+}

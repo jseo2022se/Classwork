@@ -1,0 +1,54 @@
+
+.navbar .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column wrap;
+    
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+a {
+    margin: 0 100px;
+}
+
+.childcontainer {
+    width: 1200px;
+    margin: 100px auto;
+    height: 500px;
+    display: grid;
+    grid-gap: 4px;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto auto;
+
+}
+
+.one {
+    background-color: goldenrod;
+}
+.two {
+    background-color: yellow;
+}
+.three {
+    background-color: chocolate;
+}
+.four {
+    background-color: burlywood;
+}
+.five {
+    background-color: seagreen;
+}
+.six {
+    background-color: aquamarine;
+}
+.seven {
+    background-color: slateblue;
+}
+.eight {
+    background-color: firebrick;
+}
+
