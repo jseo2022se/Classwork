@@ -5,55 +5,48 @@ const express = require('express')
 // const vegetables = require('../models/vegetables')
 
 const Vegetable = require('../models/vegetables')
+const seed = require('../models/seed')
+
 
 // router object setup
 const router = express.Router()
 
-// index for vegetables
-router.get('/', (req, res) => {
-    // res.render('vegetables/Index', {vegetables: vegetables})
+const { 
+    findAllVegetables, 
+    showNewVegetable,
+    deleteVegetable,
+    updateVegetable,
+    createsVegetable,
+    editVegetable,
+    showUniqueVegetable,
+    seedVegetable,
+    clearVegetables, } = require('../controllers/vegetableController')
 
-    Vegetable.find({}, (err, foundVegetable) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).render('vegetables/Index', {vegetables: foundVegetable})
-        }
-    })
-});
+// index for vegetables
+router.get('/', findAllVegetables)
 
 // new for vegetables
-router.get('/new', (req, res) => {
-    // res.send('<form>Create fruit</form>')
-    res.render('vegetables/New')
-})
+router.get('/new', showNewVegetable)
+
+// delete for vegetables
+router.delete('/:id', deleteVegetable)
+
+// update for vegetables
+router.put('/:id', updateVegetable)
 
 // create for vegetables
-router.post('/', (req, res) => {
-    // vegetables.push(req.body)
-    // console.log(vegetables)
-    // res.redirect('/vegetables')
-    Vegetable.create(req.body, (err, createdVegetable) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).redirect('/vegetables')
-        }
-    })
-})
+router.post('/', createsVegetable)
+
+// edit for vegetables
+router.get('/:id/edit', editVegetable)
+
+// seed vegetable data
+router.get('/seed', seedVegetable)
+
+// clear vegetables
+router.get('/clear', clearVegetables)
 
 // show for vegetables
-router.get('/:id', (req, res) => {
-    // res.render('vegetables/Show', {
-    //     vegetable: vegetables[req.params.index]
-    // })
-    Vegetable.findById(req.params.id, (err, foundVegetable) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).render('vegetables/Show', { vegetable: foundVegetable})
-        }
-    })
-});
+router.get('/:id', showUniqueVegetable)
 
 module.exports = router

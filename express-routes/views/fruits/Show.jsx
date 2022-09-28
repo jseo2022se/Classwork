@@ -10,7 +10,7 @@ class Show extends React.Component {
         // const color = this.props.fruit.color
         // const readyToEat = this.props.fruit.readyToEat
 
-        const { name, color, readyToEat } = this.props.fruit
+        const { name, color, readyToEat, _id } = this.props.fruit
 
         return (
             <DefaultLayout title={`${name} details`} foodGroup="fruits">
@@ -22,6 +22,15 @@ class Show extends React.Component {
                 <p>
                     {readyToEat ? "It's ready to eat": "It is not ready to eat"}
                 </p>
+
+                <button>
+                    <a href={`/fruits/${_id}/edit`}>Edit</a>
+                </button>
+
+                <form action={`/fruits/${_id}?_method=DELETE`} method='POST'>
+                    <input type='submit' value='Delete'></input>
+                </form>
+
                 <nav>
                     <a href='/fruits'>Back</a>
                 </nav>

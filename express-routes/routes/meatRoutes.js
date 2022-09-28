@@ -1,63 +1,53 @@
 // Load express
 const express = require('express')
+const seed = require('../models/seed')
 
 // Load meat data
 // const meat = require('../models/meat')
 
-const Meat = require('../models/meat')
+// const Meat = require('../models/meat')
+
+const { 
+    findAllMeats, 
+    showNewMeat, 
+    deleteMeat, 
+    updateMeat, 
+    createMeat, 
+    editMeat, 
+    showUniqueMeat, 
+    seedMeatData, 
+    clearMeats} = require('../controllers/meatController')
 
 // Create router object
 const router = express.Router()
 
 // meat index
-router.get('/', (req, res) => {
-    // res.render('meats/Index', {meat: meat});
-    Meat.find({}, (err, foundMeat) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).render('meats/Index', {meat: foundMeat})
-        }
-    })
-});
+router.get('/', findAllMeats)
 
 // meat New
-router.get('/new', (req, res) => {
-    // res.send('<form>Create fruit</form>')
-    res.render('meats/New')
-})
+router.get('/new', showNewMeat)
+
+// delete action 
+router.delete('/:id', deleteMeat)
+
+// update action
+router.put('/:id', updateMeat)
 
 // example of create action
-router.post('/', (req, res) => {
-    // console.log(req.body)
-    // meat.push(req.body)
-    // console.log(meat)
-    // res.redirect('/meats')
-    Meat.create(req.body, (err, createdMeat) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).redirect('/meats')
-        }
-    })
-})
+router.post('/', createMeat)
 
+// edit action
+router.get('/:id/edit', editMeat)
+
+// seed
+router.get('/seed', seedMeatData)
+
+// clear
+router.get('/clear', clearMeats)
 
 // meat show
-router.get('/:id', (req, res) => {
-    // res.send(fruits[req.params.index]);
-    // res.render('meats/Show', {
-    //     meats: meat[req.params.index]
-    // })
-    
-    Meat.findById(req.params.id, (err, foundMeat) => {
-        if (err) {
-            res.status(400).json(err)
-        } else {
-            res.status(200).render('meats/Show', { meats: foundMeat})
-        }
-    })
-});
+router.get('/:id', showUniqueMeat);
+
 
 
 module.exports = router

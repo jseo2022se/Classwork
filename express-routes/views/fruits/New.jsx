@@ -7,6 +7,7 @@ class New extends React.Component {
             <DefaultLayout title='create a new fruit' foodGroup="fruits">
                 <h1>New Page</h1>
                 <form action="/fruits" method='POST'>
+                    
                     <label htmlFor='name'>Name:</label>
                     <input type='text' id='name' name='name'></input>
 
