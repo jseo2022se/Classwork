@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    background-color: beige;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    outline: 2px solid black;
+}
+
+.homepage {
+    outline: 2px solid orange;
+}
+
+.header {
+    outline: 2px solid skyblue;
+}
+
+.searchbar {
+    outline: 2px solid green;
+}
+
+.employee-container {
+    display: flex;
+    flex-direction: column;
+    outline: 2px solid purple;
+}
+
+.employees {
+    display: grid;
+    outline: 2px solid red;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
